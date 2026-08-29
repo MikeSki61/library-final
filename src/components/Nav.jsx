@@ -1,6 +1,6 @@
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import LibraryLogo from '../assets/Library.svg';
+import { Link } from "react-router-dom"
 
 const Nav = () => {
   function openMenu() {
@@ -14,19 +14,19 @@ const Nav = () => {
   return (
     <nav>
       <div className="nav__container">
-        <a href="/">
+        <Link to="/">
           <img src={LibraryLogo} alt="" className="logo" />
-        </a>
+        </Link>
         <ul className="nav__links">
           <li className="nav__list">
-            <a href="/" className="nav__link">
+            <Link to="/" className="nav__link">
               Home
-            </a>
+            </Link>
           </li>
           <li className="nav__list">
-            <a href="/" className="nav__link">
+            <Link to="/books" className="nav__link">
               Books
-            </a>
+            </Link>
           </li>
           <button
             className="btn__menu" onClick={openMenu}>
