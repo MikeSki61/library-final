@@ -9,10 +9,10 @@ const Explore = () => {
           <h2>
             Explore more <span className="purple">Books</span>
           </h2>
-          <Link href="/books">
-          <button className="btn">
-            Explore Books
-          </button>
+          <Link to="/books">
+            <button className="btn">
+              Explore Books
+            </button>
           </Link>
         </div>
       </div>
