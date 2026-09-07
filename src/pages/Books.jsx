@@ -16,7 +16,7 @@ const Books = ({ books: initialBooks }) => {
           )
         );
     }
-    if (filter == 'HIGH_TO_LOW') {
+    if (filter === 'HIGH_TO_LOW') {
       setBooks(
         books
         .slice()
@@ -26,7 +26,7 @@ const Books = ({ books: initialBooks }) => {
         )
       );
     }
-    if (filter == 'RATING')  {
+    if (filter === 'RATING')  {
       setBooks(books.slice().sort((a, b) => b.rating - a.rating));
     }
   }

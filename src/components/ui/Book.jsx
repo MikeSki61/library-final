@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from "react-router-dom"
 import Rating from "./Rating";
 import Price from "./Price"
@@ -25,22 +25,9 @@ const Book = ({ book }) => {
       mountedRef.current = false;
       clearTimeout(timeoutId);
     }
-  }, []);
+  }, [])
 
-  // useEffect(() => {
-  //   const image = new Image();
-  //   image.src = book.url;
-  //   image.onload = () => {
-  //     setTimeout(() => {
-  //       if (mountedRef.current) {
-  //         setImg(image);
-  //       }
-  //     }, 300);
-  //   };
-  //   return () => {
-  //     mountedRef.current = false;
-  //   }
-  // })
+
 
   return (
     <div className="book">
