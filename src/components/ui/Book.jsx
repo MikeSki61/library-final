@@ -25,8 +25,8 @@ const Book = ({ book }) => {
       mountedRef.current = false;
       clearTimeout(timeoutId);
     }
-  }, 
-  [])
+  },)
+  // [])
 
 
 
