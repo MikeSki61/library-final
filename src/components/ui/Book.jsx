@@ -8,12 +8,14 @@ const Book = ({ book }) => {
   const [img, setImg] = useState();
 
   const mountedRef = useRef(true);
-
+  
   useEffect(() => {
+    mountedRef.current = true;
     const image = new Image();
+    let timeoutId;
     image.src = book.url;
     image.onload = () => {
-      setTimeout(() => {
+      timeoutId = setTimeout(() => {
         if (mountedRef.current) {
           setImg(image);
         }
@@ -21,8 +23,24 @@ const Book = ({ book }) => {
     };
     return () => {
       mountedRef.current = false;
+      clearTimeout(timeoutId);
     }
-  })
+  }, []);
+
+  // useEffect(() => {
+  //   const image = new Image();
+  //   image.src = book.url;
+  //   image.onload = () => {
+  //     setTimeout(() => {
+  //       if (mountedRef.current) {
+  //         setImg(image);
+  //       }
+  //     }, 300);
+  //   };
+  //   return () => {
+  //     mountedRef.current = false;
+  //   }
+  // })
 
   return (
     <div className="book">
